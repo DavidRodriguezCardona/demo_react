@@ -10,12 +10,36 @@ const Tables = lazy(() => import('../pages/Tables'));
 const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
 const Demo= lazy(() => import('../pages/Demo'));
+const ListUsers = lazy(() => import('../pages/Users/List')); // Que lo cargue cuando sea solicitado el lazy
+const ListPermissions = lazy(() => import('../pages/Permissions/List'));
+const ListRoles = lazy(() => import('../pages/Roles/List'));
+const SumPage = lazy(() => import('../pages/Tests/Suma'));
 
 const coreRoutes = [
   {
     path: '/demo',
     title: 'Demo',
     component: Demo,
+  },
+  {
+    path: '/sum',
+    title: 'Sum',
+    component: SumPage,
+  },
+  {
+    path: '/users/list',
+    title: 'Lista de usuarios',
+    component: ListUsers,
+  },
+  {
+    path: '/roles/list',
+    title: 'Lista de roles',
+    component: ListRoles,
+  },
+  {
+    path: '/permissions/list',
+    title: 'Lista de permisos',
+    component: ListPermissions,
   },
   {
     path: '/calendar',
@@ -65,4 +89,4 @@ const coreRoutes = [
 ];
 
 const routes = [...coreRoutes];
-export default routes;
+export default routes;
